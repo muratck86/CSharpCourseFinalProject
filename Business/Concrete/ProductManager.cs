@@ -14,9 +14,9 @@ namespace Business.Concrete
     {
         IProductDal _productDal;
 
-        public ProductManager(IProductDal inMemoryProductDal)
+        public ProductManager(IProductDal productDal)
         {
-            _productDal = inMemoryProductDal;
+            _productDal = productDal;
         }
 
         public IResult Add(Product product)
