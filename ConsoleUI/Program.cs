@@ -11,13 +11,17 @@ namespace ConsoleUI
         {
             //ProductTest();
             //CategoryTest();
-            ProductDetailsTest();
+            //ProductDetailsTest();
+
+            //ProductManager productManager = new ProductManager(new EfProductDal());
+            //Console.WriteLine(productManager.GetById(1).Data.ProductName);
+
         }
 
         private static void CategoryTest()
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in categoryManager.GetAll())
+            foreach (var category in categoryManager.GetAll().Data)
             {
                 Console.WriteLine(category.CategoryName);
             }

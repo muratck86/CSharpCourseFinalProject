@@ -13,7 +13,11 @@ namespace Business.Constants
         public static string ProductsListed = "Products listed.";
         public static string ProductFound = "Product found";
         public static string ProductDetailsListed = "Product Details Listed";
-        internal static string CategoryAdded;
-        internal static string OrdersListed;
+        public static string CategoryAdded = "Category Added";
+        public static string OrdersListed = "Orders Listed";
+        public static string ProductNotFound = "Product Not Found";
+        internal static string ProductDeleted;
+        internal static string ProductUpdated;
+        internal static string ProductNotDeleted;
     }
 }
