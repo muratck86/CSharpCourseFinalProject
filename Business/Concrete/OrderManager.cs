@@ -27,7 +27,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Order>> GetAll()
         {
-            return new SuccessDataResult<List<Order>>();
+            return new SuccessDataResult<List<Order>>(_orderDal.GetAll());
         }
 
         public IDataResult<Order> GetById(int orderId)

@@ -29,7 +29,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 00)
+            if (DateTime.Now.Hour == 08)
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed);
         }
@@ -41,6 +41,9 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetById(int productId)
         {
+            var result = _productDal.Get(p => p.ProductId == productId);
+            if (result == null)
+                return new ErrorDataResult<Product>(Messages.ProductNotFound);
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId), Messages.ProductFound);
         }
 
@@ -53,6 +56,23 @@ namespace Business.Concrete
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails(), Messages.ProductDetailsListed);
+        }
+
+        public IResult Remove(int id)
+        {
+            var deleted = GetById(id);
+            if (deleted.Success)
+            {
+                _productDal.Delete(deleted.Data);
+                return new SuccessResult(Messages.ProductDeleted);
+            }
+            return new ErrorResult(Messages.ProductNotDeleted);
+        }
+
+        public IResult Update(Product product)
+        {
+            _productDal.Update(product);
+            return new SuccessResult(Messages.ProductUpdated);
         }
     }
 }
