@@ -30,14 +30,14 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>();
-            services.AddSingleton<IProductDal, EfProductDal>();
-            services.AddSingleton<IOrderService, OrderManager>();
-            services.AddSingleton<IOrderDal, EfOrderDal>();
-            services.AddSingleton<ICustomerService, CustomerManager>();
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
-            services.AddSingleton<ICategoryService, CategoryManager>();
-            services.AddSingleton<ICategoryDal, EfCategoryDal>();
+            //services.AddSingleton<IProductService, ProductManager>();
+            //services.AddSingleton<IProductDal, EfProductDal>();
+            //services.AddSingleton<IOrderService, OrderManager>();
+            //services.AddSingleton<IOrderDal, EfOrderDal>();
+            //services.AddSingleton<ICustomerService, CustomerManager>();
+            //services.AddSingleton<ICustomerDal, EfCustomerDal>();
+            //services.AddSingleton<ICategoryService, CategoryManager>();
+            //services.AddSingleton<ICategoryDal, EfCategoryDal>();
 
         }
 
