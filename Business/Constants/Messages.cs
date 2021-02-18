@@ -16,8 +16,10 @@ namespace Business.Constants
         public static string CategoryAdded = "Category Added";
         public static string OrdersListed = "Orders Listed";
         public static string ProductNotFound = "Product Not Found";
-        internal static string ProductDeleted;
-        internal static string ProductUpdated;
-        internal static string ProductNotDeleted;
+        public static string ProductDeleted = "Product successfuly deleted.";
+        public static string ProductUpdated = "Product successfuly updated.";
+        public static string ProductNotDeleted = "Product name can't start with a number";
+
+        public static string InvalidProductNameStartsWithNumber { get; internal set; }
     }
 }
