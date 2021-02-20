@@ -23,10 +23,10 @@ namespace Core.Aspects.Autofac.Validation
         }
         protected override void OnBefore(IInvocation invocation)
         {
-            var validator = (IValidator)Activator.CreateInstance(_validatorType);
-            var entityType = _validatorType.BaseType.GetGenericArguments()[0];
-            var entities = invocation.Arguments.Where(t => t.GetType() == entityType);
-            foreach (var entity in entities)
+            var validator = (IValidator)Activator.CreateInstance(_validatorType); //reflection: create an instance of validator
+            var entityType = _validatorType.BaseType.GetGenericArguments()[0]; //get generic type of its base type (entity)
+            var entities = invocation.Arguments.Where(t => t.GetType() == entityType); //get parameters of the method (i.e. add(parameters..)) which are the same of generic type of entityType
+            foreach (var entity in entities) //validate each using ValidationTool
             {
                 ValidationTool.Validate(validator, entity);
             }

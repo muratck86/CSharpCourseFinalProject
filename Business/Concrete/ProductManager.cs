@@ -14,8 +14,9 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    // business code
-    // validation code don't combine these two together.
+    // business code, concerns logical validation.
+    // validation code, don't combine these two together.
+    //validation concerns  structural validation
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
@@ -29,7 +30,7 @@ namespace Business.Concrete
         public IResult Add(Product product)
         {
             //validation
-            ValidationTool.Validate(new ProductValidator(), product);
+            //ValidationTool.Validate(new ProductValidator(), product);
 
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);

@@ -19,7 +19,7 @@ namespace Business.Constants
         public static string ProductDeleted = "Product successfuly deleted.";
         public static string ProductUpdated = "Product successfuly updated.";
         public static string ProductNotDeleted = "Product name can't start with a number";
-
-        public static string InvalidProductNameStartsWithNumber { get; internal set; }
+        public static string OrderDateRequired = "Order date can't be empty.";
+        public static string InvalidProductNameStartsWithNumber = "Product name cannot start with numbers";
     }
 }
