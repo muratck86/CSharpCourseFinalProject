@@ -30,6 +30,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            /* Commented out becaues, now I use Autofac*/
             //services.AddSingleton<IProductService, ProductManager>();
             //services.AddSingleton<IProductDal, EfProductDal>();
             //services.AddSingleton<IOrderService, OrderManager>();

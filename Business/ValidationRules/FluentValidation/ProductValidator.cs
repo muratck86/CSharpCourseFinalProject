@@ -17,6 +17,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(p => p.UnitPrice).
                 GreaterThanOrEqualTo(10).When(p => p.CategoryId == 2)
                 .WithMessage("Product price must be >= 10"); //if category is 2 then unitprice >= 10
+            //apply my custom rule
             RuleFor(p => p.ProductName).Must(NotStartWithNum).WithMessage(Messages.InvalidProductNameStartsWithNumber);
         }
 
