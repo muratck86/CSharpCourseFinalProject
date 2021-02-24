@@ -21,5 +21,8 @@ namespace Business.Constants
         public static string ProductNotDeleted = "Product name can't start with a number";
         public static string OrderDateRequired = "Order date can't be empty.";
         public static string InvalidProductNameStartsWithNumber = "Product name cannot start with numbers";
+        public static string MaxProductCountReached = "Maximum product number for this category reached";
+        public static string SameNamedProductExists ="Product name already exists.";
+        internal static string CategoryLimitExceeded = "Category limit reached";
     }
 }

@@ -21,7 +21,7 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        [ValidationAspect(typeof(CategoryValidator)]
+        [ValidationAspect(typeof(CategoryValidator))]
         public IResult Add(Category category)
         {
             //ValidationTool.Validate(new CategoryValidator(), category);
@@ -29,11 +29,11 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CategoryAdded);
         }
 
+
         public IDataResult<List<Category>> GetAll()
         {
             return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
         }
-
 
 
         public IDataResult<Category> GetById(int categoryId)

@@ -2,6 +2,7 @@
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Business.Demo_CrossCuttingConcerns;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
@@ -24,6 +25,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
             builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
             builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+
+            builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
