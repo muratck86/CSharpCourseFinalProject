@@ -97,6 +97,8 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductUpdated);
         }
 
+        //-----------------Business Rules checkers-------------------------
+
         private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)
         {
             var productCount = _productDal.GetAll(p => p.CategoryId == categoryId).Count;

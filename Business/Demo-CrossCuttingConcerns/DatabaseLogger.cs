@@ -6,7 +6,7 @@ namespace Business.Demo_CrossCuttingConcerns
     {
         public void Log()
         {
-            Console.WriteLine("Logged to fatabase..");
+            Console.WriteLine("Logged to database..");
         }
     }
 }

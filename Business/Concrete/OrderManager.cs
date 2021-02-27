@@ -46,5 +46,18 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<OrderDetailsDto>>(_orderDal.GetOrderDetails());
         }
+
+        public IResult Update(Order order)
+        {
+            _orderDal.Update(order);
+            return new SuccessResult(Messages.OrderUpdated);
+        }
+
+        public IResult Remove(int orderId)
+        {
+            var toRemove = GetById(orderId).Data;
+            _orderDal.Delete(toRemove);
+            return new SuccessResult(Messages.OrderRemoved);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfOrderDal : EfEntityRepositoryBase<Order, NorthwindContext>, IOrderDal
     {
+
         public List<OrderDetailsDto> GetOrderDetails()
         {
             using (NorthwindContext context = new NorthwindContext())

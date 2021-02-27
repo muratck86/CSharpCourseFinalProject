@@ -9,7 +9,9 @@ namespace Business.Abstract
     public interface ICategoryService
     {
         IDataResult<List<Category>> GetAll();
-        IResult Add(Category product);
+        IResult Add(Category category);
         IDataResult<Category> GetById(int categoryId);
+        IResult Update(Category category);
+        IResult Remove(int categoryId);
     }
 }
