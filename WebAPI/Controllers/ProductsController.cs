@@ -45,8 +45,9 @@ namespace WebAPI.Controllers
         {
             var result = _productService.Add(product);
             if (result.Success)
-                return Created("#",result);
+                return StatusCode(201, result);
             return BadRequest(result);
+            
         }
 
         [HttpGet("getallbycategoryid")]

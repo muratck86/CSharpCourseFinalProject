@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
@@ -36,6 +37,19 @@ namespace Business.Concrete
         public IDataResult<Customer> GetById(string customerId)
         {
             return new SuccessDataResult<Customer>(_customerDal.Get(c => c.CustomerId == customerId));
+        }
+
+        public IResult Update(Customer customer)
+        {
+            _customerDal.Update(customer);
+            return new SuccessResult(Messages.CustomerUpdated);
+        }
+
+        public IResult Remove(string customerId)
+        {
+            var toRemove = GetById(customerId).Data;
+            _customerDal.Delete(toRemove);
+            return new SuccessResult(Messages.CustomerRemoved);
         }
     }
 }

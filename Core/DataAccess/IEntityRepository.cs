@@ -12,7 +12,6 @@ namespace Core.DataAccess
         //Predicate
         //Delegate
         List<T> GetAll(Expression<Func<T, bool>> filter = null);
-
         T Get(Expression<Func<T, bool>> filter);
         void Add(T t);
         void Update(T t);

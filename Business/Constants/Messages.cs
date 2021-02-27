@@ -23,6 +23,12 @@ namespace Business.Constants
         public static string InvalidProductNameStartsWithNumber = "Product name cannot start with numbers";
         public static string MaxProductCountReached = "Maximum product number for this category reached";
         public static string SameNamedProductExists ="Product name already exists.";
-        internal static string CategoryLimitExceeded = "Category limit reached";
+        public static string CategoryLimitExceeded = "Category limit reached";
+        public static string CategoryRemoved = "Category Removed";
+        public static string CategoryUpdated = "Category Updated";
+        public static string CustomerUpdated = "Customer Updated";
+        public static string CustomerRemoved = "Customer Removed";
+        public static string OrderRemoved = "Order Removed";
+        public static string OrderUpdated = "Order Updated";
     }
 }
