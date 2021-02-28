@@ -1,6 +1,8 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -30,5 +32,12 @@ namespace Business.Constants
         public static string CustomerRemoved = "Customer Removed";
         public static string OrderRemoved = "Order Removed";
         public static string OrderUpdated = "Order Updated";
+        public static string AuthorizationDenied = "Authorization Denied";
+        public static string UserRegistered = "User successfuly registered";
+        public static string UserNotFound = "User not found";
+        public static string PasswordError = "Invalid password";
+        public static string SuccessfulLogin = "Login successful";
+        public static string UserAlreadyExists = "User already exists";
+        public static string AccessTokenCreated = "Access token created successfuly";
     }
 }
