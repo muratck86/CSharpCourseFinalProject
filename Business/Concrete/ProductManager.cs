@@ -32,6 +32,7 @@ namespace Business.Concrete
 
         //validation
         //ValidationTool.Validate(new ProductValidator(), product);
+        [SecuredOperation("product.add")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
