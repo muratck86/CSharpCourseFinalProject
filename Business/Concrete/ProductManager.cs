@@ -33,7 +33,7 @@ namespace Business.Concrete
 
         //validation
         //ValidationTool.Validate(new ProductValidator(), product);
-        [SecuredOperation("product.add")]
+        [SecuredOperation("product.add, admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
@@ -50,6 +50,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductAdded);
         }
 
+        [CacheAspect] //key,value pair
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour == 08)
