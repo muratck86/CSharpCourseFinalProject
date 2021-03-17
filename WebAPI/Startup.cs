@@ -44,6 +44,7 @@ namespace WebAPI
             //services.AddSingleton<IOrderService, OrderManager>();
             //services.AddSingleton<IOrderDal, EfOrderDal>();
 
+            services.AddCors();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -66,13 +67,15 @@ namespace WebAPI
             }); ;
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called at the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builer => builer.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyOrigin()); 
 
             app.UseHttpsRedirection();
 

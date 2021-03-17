@@ -30,7 +30,7 @@ namespace Core.Aspects.Autofac.Performance
         {
             if (_stopwatch.Elapsed.TotalSeconds > _interval)
             {
-                Debug.WriteLine($"Performance : {invocation.Method.DeclaringType.FullName}.{invocation.Method.Name}-->{_stopwatch.Elapsed.TotalSeconds}"); //Log to console than this method took too long
+                Debug.WriteLine($"Performance : {invocation.Method.DeclaringType.FullName}.{invocation.Method.Name}-->{_stopwatch.Elapsed.TotalSeconds}"); //Log to console that this method took too long
             }
             _stopwatch.Reset();
         }
