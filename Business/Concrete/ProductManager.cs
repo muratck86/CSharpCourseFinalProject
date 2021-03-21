@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         //validation
         //ValidationTool.Validate(new ProductValidator(), product);
-        [SecuredOperation("product.add, admin")]
+        //[SecuredOperation("product.add, admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")] //apply on all IProductService.Get operations
         public IResult Add(Product product)
@@ -131,7 +131,7 @@ namespace Business.Concrete
 
         private IResult CheckIfProductNameExists(string productName)
         {
-            if(_productDal.Get(p => p.ProductName == productName) != null)
+            if (_productDal.Get(p => p.ProductName == productName) != null)
             {
                 return new ErrorResult(Messages.SameNamedProductExists);
             }
@@ -141,7 +141,7 @@ namespace Business.Concrete
         private IResult CheckIfCategoryCountLimitExceeded()
         {
             int count = _categoryService.GetAll().Data.Count;
-            if(count >=15)
+            if (count >= 15)
             {
                 return new ErrorResult(Messages.CategoryLimitExceeded);
             }
